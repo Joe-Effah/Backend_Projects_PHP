@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+
+
+<h1>Audio Section</h1>
+
+<p>Convert Video To  Audio </p>
+<p>Add Image to Audio File</p>
+
+@if (@Model.fileUploadStatus)
+{
+    <h2>File Was Successfully Uploaded</h2>
+}
+
+@if(@Model.converted){
+         
+    <a href=@Url.Page("Index","AudioDownload",new{path = @Model.convertedDownloadPath} ) download="Music">  Download Music </a>
+}
+
+
+
+  <form method="post" enctype="multipart/form-data">
+        <input type="file" name="fileData" >
+       
+        <button>Convert File</button>
+    </form>
+
+
+ 
+

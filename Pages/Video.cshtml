@@ -1,0 +1,29 @@
+@page
+@model VideoModel
+
+@{
+    ViewData["Title"] = "Video Section";
+}
+@if(@Model.Converted){
+     @* @Model.OnGetVideoDownload();  *@
+     @* @Model.ConvertedDownloadPath; *@
+     @Model.ConvertedDownloadPath;
+    
+     
+    <a href=@Url.Page("Video","VideoDownload",new{path = @Model.ConvertedDownloadPath} ) download="Music">  Download Music </a>
+}
+
+<h1>Video  Section</h1>
+
+<p>Convert Video To  Other Video Format </p>
+  <form method="post" enctype="multipart/form-data">
+        <input type="file" name="fileData" >
+        <select name="fileFormat" id="format">
+            <option  value="mp3">Convert to .Mp3</option>
+            <option value="mp4">Convert to .Mp4</option>
+            <option value="TS">Convert to .TS file</option>
+            <option value="avi">Convert to .Avi</option>
+            <option value="webm">Convert to .Webm</option>
+        </select>
+        <button>Convert File</button>
+    </form>

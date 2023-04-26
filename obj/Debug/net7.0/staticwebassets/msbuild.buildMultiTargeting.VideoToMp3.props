@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\VideoToMp3.props" />
+</Project>
